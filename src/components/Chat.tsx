@@ -42,9 +42,9 @@ export default function Chat() {
     setError('')
 
     try {
-      // Get Supabase URL and key from environment (Vite will inject these at build time)
-      const supabaseUrl = (import.meta.env as any).VITE_SUPABASE_URL || (import.meta.env as any).NEXT_PUBLIC_SUPABASE_URL
-      const anonKey = (import.meta.env as any).VITE_SUPABASE_ANON_KEY || (import.meta.env as any).NEXT_PUBLIC_SUPABASE_ANON_KEY
+      // Get Supabase URL and key from environment (Vite injects these at build time)
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || import.meta.env.NEXT_PUBLIC_SUPABASE_URL
+      const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || import.meta.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
       
       const response = await fetch(`${supabaseUrl}/functions/v1/rag_chat`, {
         method: 'POST',
