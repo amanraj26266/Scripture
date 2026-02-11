@@ -1,0 +1,32 @@
+{
+  "name": "scripture-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "prettier --write .",
+    "db:migrate": "supabase db push",
+    "db:reset": "supabase db reset",
+    "functions:deploy": "supabase functions deploy rag_chat",
+    "ingest": "node scripts/ingest_bhagavad_gita.js",
+    "validate": "node scripts/validate_setup.js",
+    "setup": "npm install && npm run db:migrate && npm run ingest && npm run functions:deploy"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@supabase/supabase-js": "^2.27.0",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6",
+    "vite": "^5.2.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "prettier": "^3.0.0",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7"
+  }
+}

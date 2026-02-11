@@ -1,0 +1,12 @@
+{
+  "projectId": "YOUR_PROJECT_REF_HERE",
+  "db": {
+    "tables": []
+  },
+  "functions": [
+    {
+      "slug": "rag_chat",
+      "importMap": "./supabase/functions/_shared/import_map.json"
+    }
+  ]
+}
